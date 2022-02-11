@@ -10,7 +10,7 @@ const button4 = document.querySelector("#button4")
 
 const mitzvahMishkebabbleButton = document.querySelector ("#mitzvahMishkebabbleButton")
 
-
+ff
 //input= click --> output --> randomize Mishkabbabler -->into MitzvaSelections []
 /*----------------------------- Event Listeners -----------------------------*/
 
