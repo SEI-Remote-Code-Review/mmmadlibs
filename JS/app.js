@@ -10,13 +10,11 @@ const button4 = document.querySelector("#button4")
 
 const mitzvahMishkebabbleButton = document.querySelector ("#mitzvahMishkebabbleButton")
 
-ff
+
 //input= click --> output --> randomize Mishkabbabler -->into MitzvaSelections []
 /*----------------------------- Event Listeners -----------------------------*/
 
-button1.addEventListener('click', () => {
-    
-})
+
 button2.addEventListener('click', () => {
     console.log('Yechi HaMelech')
 })
@@ -33,4 +31,8 @@ mitzvaSelections.push(mitzvaSelections)
 })
 
 
-console.log(mitzvaSelections);
+
+
+
+
+console.log(mitzvahList);
