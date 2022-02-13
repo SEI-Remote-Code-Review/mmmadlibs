@@ -13,9 +13,9 @@ const button2 = document.querySelector("#button2");
 const button3 = document.querySelector("#button3");
 const button4 = document.querySelector("#button4");
 
-const mitzvahMishkebabbleButton = document.querySelector("#mitzvahMishkebabbleButton");
-
-
+const mitzvahMishkebabbleButton = document.querySelector(
+  "#mitzvahMishkebabbleButton"
+);
 
 const submitAdjective = document.getElementById("adjectives-button");
 
@@ -24,25 +24,22 @@ const nounInp1 = document.getElementById("ninput-1");
 const nounInp2 = document.getElementById("ninput-2");
 const nounInp3 = document.getElementById("ninput-3");
 
-const verbsForm = document.getElementById("verb-form");
-const formInputEls= document.querySelectorAll(".form-input")
-console.log(formInputEls)
+const verbsForm = document.getElementById("verbs-form");
+const formInputEls = document.querySelectorAll(".form-input");
 const verbInp1 = document.getElementById("vinput-1");
 const verbInp2 = document.getElementById("vinput-2");
-const verbInp3= document.getElementById("vinput-3");
+const verbInp3 = document.getElementById("vinput-3");
 
 const submitAdjectiveButton = document.getElementById("adjectives-button");
 const adjInp1 = document.getElementById("adjinput-1");
 const adjInp2 = document.getElementById("adjinput-2");
-const adjInp3= document.getElementById("adjinput-3");
-
-
+const adjInp3 = document.getElementById("adjinput-3");
 
 //input= click --> output --> randomize Mishkabbabler -->into MitzvaSelections []
 /*----------------------------- Event Listeners -----------------------------*/
 button1.addEventListener("click", () => {
-    console.log("Yechi HaMelech");
-  });
+  console.log("Yechi HaMelech");
+});
 button2.addEventListener("click", () => {
   console.log("Yechi HaMelech");
 });
@@ -54,7 +51,7 @@ button4.addEventListener("click", () => {
 });
 
 mitzvahMishkebabbleButton.addEventListener("click", () => {
-    return getMitzvas();
+  return getMitzvas();
 });
 
 // submitNounsButton.addEventListener("click", function (evt) {
@@ -62,7 +59,6 @@ mitzvahMishkebabbleButton.addEventListener("click", () => {
 //     const li.i = document.createElement("li");
 //     li.i.textContent = nounInp1.value;
 //     document.querySelector("ul").appendChild(li1);}
-
 
 // const li2 = document.createElement("li");
 //     li2.textContent = nounInp2.value;
@@ -79,49 +75,49 @@ mitzvahMishkebabbleButton.addEventListener("click", () => {
 // console.log(nounsArray);
 // });
 
-verbsForm.addEventListener("submit", getInputValues)
-const formValues = []
-function getInputValues(){
-    formInputEls.forEach(formInputEl => {
-        console.log(formValues)
-        const input = formInputEl.value
-        formValues.push(input)
-    })
+verbsForm.addEventListener("submit", getInputValues);
 
-console.log(e.value);
-    const li4 = document.createElement("li");
-        li4.textContent = verbInp1.value;
-        document.getElementById("verbs-ul").appendChild(li4);
+const formValues = [];
 
-    const li5 = document.createElement("li");
-        li5.textContent = verbInp2.value;
-        document.getElementById("verbs-ul").appendChild(li5);
+function getInputValues(evt) {
+evt.preventDefault()
+  formInputEls.forEach((formInputEl) => {
+    const input = formInputEl.value;
+    formValues.push(input);
+    console.log(formValues)
+  });
+}
+// console.log(e.value);
+//     const li4 = document.createElement("li");
+//         li4.textContent = verbInp1.value;
+//         document.getElementById("verbs-ul").appendChild(li4);
 
-    const li6 = document.createElement("li");
-        li6.textContent = verbInp3.value;
-        document.getElementById("verbs-ul").appendChild(li6);
-    }
-verbsArray.push(verbInp1.value);
-verbsArray.push(verbInp2.value);
-verbsArray.push(verbInp3.value);
+//     const li5 = document.createElement("li");
+//         li5.textContent = verbInp2.value;
+//         document.getElementById("verbs-ul").appendChild(li5);
 
+//     const li6 = document.createElement("li");
+//         li6.textContent = verbInp3.value;
+//         document.getElementById("verbs-ul").appendChild(li6);
+
+// verbsArray.push(verbInp1.value);
+// verbsArray.push(verbInp2.value);
+// verbsArray.push(verbInp3.value);
 
 submitAdjectiveButton.addEventListener("click", function (evt) {
-    const li7 = document.createElement("li");
-    li7.textContent = adjInp1.value;
-    document.getElementById("adj-ul").appendChild(li7);
+  const li7 = document.createElement("li");
+  li7.textContent = adjInp1.value;
+  document.getElementById("adj-ul").appendChild(li7);
 
-const li8 = document.createElement("li");
-    li8.textContent = adjInp2.value;
-    document.getElementById("adj-ul").appendChild(li8);
+  const li8 = document.createElement("li");
+  li8.textContent = adjInp2.value;
+  document.getElementById("adj-ul").appendChild(li8);
 
-const li9 = document.createElement("li");
-    li9.textContent = adjInp3.value;
-    document.getElementById("adj-ul").appendChild(li9);
+  const li9 = document.createElement("li");
+  li9.textContent = adjInp3.value;
+  document.getElementById("adj-ul").appendChild(li9);
 
-adjArray.push(adjInp1.value);
-adjArray.push(adjInp2.value);
-adjArray.push(adjInp3.value);
-
+  adjArray.push(adjInp1.value);
+  adjArray.push(adjInp2.value);
+  adjArray.push(adjInp3.value);
 });
-
