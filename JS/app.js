@@ -3,6 +3,7 @@ import { getMitzvas } from "./MitzvahList.js";
 const finalMitzvaArray = getMitzvas();
 let nounsArray = [];
 let verbsArray = [];
+let adjArray = [];
 //getMitzvas returns 3 random Mitzvos from the Mitzva list
 
 /*-------------------------------- Cached Element references --------------------------------*/
@@ -27,6 +28,11 @@ const submitVerbsButton = document.getElementById("verbs-button");
 const verbInp1 = document.getElementById("vinput-1");
 const verbInp2 = document.getElementById("vinput-2");
 const verbInp3= document.getElementById("vinput-3");
+
+const submitAdjectiveButton = document.getElementById("adjectives-button");
+const adjInp1 = document.getElementById("adjinput-1");
+const adjInp2 = document.getElementById("adjinput-2");
+const adjInp3= document.getElementById("adjinput-3");
 
 
 console.log(nounInp1.id);
@@ -88,3 +94,24 @@ verbsArray.push(verbInp3.value);
 
 console.log(verbsArray);
 });
+
+submitAdjectiveButton.addEventListener("click", function (evt) {
+    const li7 = document.createElement("li");
+    li7.textContent = adjInp1.value;
+    document.getElementById("adj-ul").appendChild(li7);
+
+const li8 = document.createElement("li");
+    li8.textContent = adjInp2.value;
+    document.getElementById("adj-ul").appendChild(li8);
+
+const li9 = document.createElement("li");
+    li9.textContent = adjInp3.value;
+    document.getElementById("adj-ul").appendChild(li9);
+
+adjArray.push(adjInp1.value);
+adjArray.push(adjInp2.value);
+adjArray.push(adjInp3.value);
+
+console.log(adjArray);
+});
+
