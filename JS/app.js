@@ -24,7 +24,9 @@ const nounInp1 = document.getElementById("ninput-1");
 const nounInp2 = document.getElementById("ninput-2");
 const nounInp3 = document.getElementById("ninput-3");
 
-const submitVerbsButton = document.getElementById("verbs-button");
+const verbsForm = document.getElementById("verb-form");
+const formInputEls= document.querySelectorAll(".form-input")
+console.log(formInputEls)
 const verbInp1 = document.getElementById("vinput-1");
 const verbInp2 = document.getElementById("vinput-2");
 const verbInp3= document.getElementById("vinput-3");
@@ -35,12 +37,12 @@ const adjInp2 = document.getElementById("adjinput-2");
 const adjInp3= document.getElementById("adjinput-3");
 
 
-console.log(nounInp1.id);
 
 //input= click --> output --> randomize Mishkabbabler -->into MitzvaSelections []
 /*----------------------------- Event Listeners -----------------------------*/
-console.log(finalMitzvaArray);
-
+button1.addEventListener("click", () => {
+    console.log("Yechi HaMelech");
+  });
 button2.addEventListener("click", () => {
   console.log("Yechi HaMelech");
 });
@@ -55,45 +57,54 @@ mitzvahMishkebabbleButton.addEventListener("click", () => {
     return getMitzvas();
 });
 
-submitNounsButton.addEventListener("click", function (evt) {
-    const li1 = document.createElement("li");
-    li1.textContent = nounInp1.value;
-    document.querySelector("ul").appendChild(li1);
+// submitNounsButton.addEventListener("click", function (evt) {
+//     for(let i=0;i<3;i++){
+//     const li.i = document.createElement("li");
+//     li.i.textContent = nounInp1.value;
+//     document.querySelector("ul").appendChild(li1);}
 
-const li2 = document.createElement("li");
-    li2.textContent = nounInp2.value;
-    document.querySelector("ul").appendChild(li2);
 
-const li3 = document.createElement("li");
-    li3.textContent = nounInp3.value;
-    document.querySelector("ul").appendChild(li3);
+// const li2 = document.createElement("li");
+//     li2.textContent = nounInp2.value;
+//     document.querySelector("ul").appendChild(li2);
 
-nounsArray.push(nounInp1.value);
-nounsArray.push(nounInp2.value);
-nounsArray.push(nounInp3.value);
+// const li3 = document.createElement("li");
+//     li3.textContent = nounInp3.value;
+//     document.querySelector("ul").appendChild(li3);
 
-console.log(nounsArray);
-});
+// nounsArray.push(nounInp1.value);
+// nounsArray.push(nounInp2.value);
+// nounsArray.push(nounInp3.value);
 
-submitVerbsButton.addEventListener("click", function (evt) {
+// console.log(nounsArray);
+// });
+
+verbsForm.addEventListener("submit", getInputValues)
+const formValues = []
+function getInputValues(){
+    formInputEls.forEach(formInputEl => {
+        console.log(formValues)
+        const input = formInputEl.value
+        formValues.push(input)
+    })
+
+console.log(e.value);
     const li4 = document.createElement("li");
-    li4.textContent = verbInp1.value;
-    document.getElementById("verbs-ul").appendChild(li4);
+        li4.textContent = verbInp1.value;
+        document.getElementById("verbs-ul").appendChild(li4);
 
-const li5 = document.createElement("li");
-    li5.textContent = verbInp2.value;
-    document.getElementById("verbs-ul").appendChild(li5);
+    const li5 = document.createElement("li");
+        li5.textContent = verbInp2.value;
+        document.getElementById("verbs-ul").appendChild(li5);
 
-const li6 = document.createElement("li");
-    li6.textContent = verbInp3.value;
-    document.getElementById("verbs-ul").appendChild(li6);
-
+    const li6 = document.createElement("li");
+        li6.textContent = verbInp3.value;
+        document.getElementById("verbs-ul").appendChild(li6);
+    }
 verbsArray.push(verbInp1.value);
 verbsArray.push(verbInp2.value);
 verbsArray.push(verbInp3.value);
 
-console.log(verbsArray);
-});
 
 submitAdjectiveButton.addEventListener("click", function (evt) {
     const li7 = document.createElement("li");
@@ -112,6 +123,5 @@ adjArray.push(adjInp1.value);
 adjArray.push(adjInp2.value);
 adjArray.push(adjInp3.value);
 
-console.log(adjArray);
 });
 

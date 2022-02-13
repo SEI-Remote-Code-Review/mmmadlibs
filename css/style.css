@@ -1,8 +1,4 @@
 #cards {
-    display: flex;
-    justify-content: center;
-}
-.btn btn-primary{
-    display: flex;
-    flex-shrink: 3;
+    display:flex;
+    
 }

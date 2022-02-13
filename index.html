@@ -35,7 +35,7 @@
         <a href="#" id="button1" class="btn btn-primary">Go somewhere</a>
       </div>
     </div>
-    <div class="card" style="width: 18rem;" id="card2">
+    <div class="cards" style="width: 18rem;" id="card2">
       <img class="card-img-top" src="https://static.independent.co.uk/s3fs-public/thumbnails/image/2019/09/28/12/rosh-hashanah-main-0.jpg?quality=75&width=990&auto=webp&crop=982:726,smart" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">Card title</h5>
@@ -43,7 +43,7 @@
         <a href="#" id="button2" class="btn btn-primary">Go somewhere</a>
       </div>
     </div>
-    <div class="card" style="width: 18rem;"id="card3">
+    <div class="cards" style="width: 18rem;"id="card3">
       <img class="card-img-top" src="http://01.myjewishpage.com/images/mychabad/communicator/ChanukahTownHall/menorahMobileSlice.jpg" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">Card title</h5>
@@ -51,7 +51,7 @@
         <a href="#" id="button3" class="btn btn-primary">Go somewhere</a>
       </div>
     </div>
-    <div class="card" style="width: 18rem;" id="card4">
+    <div class="cards" style="width: 18rem;" id="card4">
       <img class="card-img-top" src="https://cdn.shopify.com/s/files/1/1354/8045/products/hand_matzah_1080x.png?v=1552605765" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">Card title</h5>
@@ -76,20 +76,22 @@
   <div class="input-group" id="verbs-input">
     <div class="input-group-prepend">
       <span class="input-group-text" id="">Add 3 Verbs</span>
-    </div>
-    <input type="text" id="vinput-1" class="form-control verb-group-input">
-    <input type="text" id="vinput-2"class="form-control verb-group-input">
-    <input type="text" id="vinput-3"class="form-control verb-group-input">
-    <button class="btn btn-primary" id ="verbs-button" type="submit">Submit Verbs!</button>
-    <ul id="verbs-ul"></ul></div> 
+        </div>
+        <form id="verb-form">
+          <input type="text" id="vinput-1" class="form-control form-input verb-group-input"/> 
+          <input type="text" id="vinput-2"class="form-control form-input verb-group-input"/>
+          <input type="text" id="vinput-3"class="form-control form-input verb-group-input"/>
+          <button class="btn btn-primary" id ="verbs-button" type="submit">Submit Verbs!</button>
+        </form>
+        <ul id="verbs-ul"></ul></div> 
 
   <div class="input-group" id="adjectives-input">
     <div class="input-group-prepend">
       <span class="input-group-text"">Add 3 Adjectives</span>
     </div>
-    <input type="text" id="adjinput-1" class="form-control adj-group-input">
-    <input type="text" id="adjinput-2" class="form-control adj-group-input">
-    <input type="text" id="adjinput-3" class="form-control adj-group-input">
+    <input type="text" id="adjinput-1" class="form-control adj-group-input"/>
+    <input type="text" id="adjinput-2" class="form-control adj-group-input"/>
+    <input type="text" id="adjinput-3" class="form-control adj-group-input"/>
     <button class="btn btn-primary" type="submit" id="adjectives-button">Submit Adjectives!</button>
   <ul id="adj-ul"></ul> 
 </div>
