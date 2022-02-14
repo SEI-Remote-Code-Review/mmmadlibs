@@ -17,7 +17,6 @@ const mitzvahMishkebabbleButton = document.querySelector(
   "#mitzvahMishkebabbleButton"
 );
 
-const submitAdjective = document.getElementById("adjectives-button");
 
 const nounsForm = document.getElementById("nouns-form");
 const nounsFormInputEls = document.querySelectorAll(".noun-group-input");
@@ -35,6 +34,8 @@ const verbsFormInputEls = document.querySelectorAll(".verb-group-input");
 const adjForm = document.getElementById("adj-form");
 const adjFormInputEls = document.querySelectorAll(".adj-group-input");
 
+const nameForm = document.getElementById ("name-form");
+const nameFormInputEls = document.querySelector(".name-form-input");
 // const adjInp1 = document.getElementById("adjinput-1");
 // const adjInp2 = document.getElementById("adjinput-2");
 // const adjInp3 = document.getElementById("adjinput-3");
@@ -149,12 +150,30 @@ const adjFormValues = [];
 
 function getAdjInputValues(evt) {
 evt.preventDefault()
-  adjFormInputEls.forEach((adjFormInputEl) => {
-    const adjInput = adjFormInputEl.value;
+adjFormInputEls.forEach((adjFormInputEl) => {
+    if (adjFormInputEl.value === ""){
+    return alert ("Please submit 3 adjectives!")}
+    else {const adjInput = adjFormInputEl.value;
     adjFormValues.push(adjInput);
     console.log(adjFormValues)
-  });
+}});
 }
+
+nameForm.addEventListener("submit", getNameInputValues);
+const nameFormValues = []
+
+function getNameInputValues(evt) {
+    evt.preventDefault()
+         if (nameFormInputEls.value === ""){
+            return alert ("Please submit a name!")}
+        else {
+        const nameInput = nameFormInputEls.value;
+        nameFormValues.push(nameInput);
+        console.log(nameFormValues)
+    }
+};
+
+    
 // submitAdjectiveButton.addEventListener("click", function (evt) {
 //   const li7 = document.createElement("li");
 //   li7.textContent = adjInp1.value;
