@@ -22,15 +22,15 @@ const submitAdjective = document.getElementById("adjectives-button");
 const nounsForm = document.getElementById("nouns-form");
 const nounsFormInputEls = document.querySelectorAll(".noun-group-input");
 
-const nounInp1 = document.getElementById("ninput-1");
-const nounInp2 = document.getElementById("ninput-2");
-const nounInp3 = document.getElementById("ninput-3");
+// const nounInp1 = document.getElementById("ninput-1");
+// const nounInp2 = document.getElementById("ninput-2");
+// const nounInp3 = document.getElementById("ninput-3");
 
 const verbsForm = document.getElementById("verbs-form");
 const verbsFormInputEls = document.querySelectorAll(".verb-group-input");
-const verbInp1 = document.getElementById("vinput-1");
-const verbInp2 = document.getElementById("vinput-2");
-const verbInp3 = document.getElementById("vinput-3");
+// const verbInp1 = document.getElementById("vinput-1");
+// const verbInp2 = document.getElementById("vinput-2");
+// const verbInp3 = document.getElementById("vinput-3");
 
 const adjForm = document.getElementById("adj-form");
 const adjFormInputEls = document.querySelectorAll(".adj-group-input");
@@ -65,14 +65,27 @@ nounsForm.addEventListener("submit", getNounInputValues);
 
 const nounFormValues = [];
 
+
+
 function getNounInputValues(evt) {
 evt.preventDefault()
-  nounsFormInputEls.forEach((nounsFormInputEl) => {
+
+nounsFormInputEls.forEach((nounsFormInputEl) => {
+    if (nounsFormInputEl.value === ""){
+    return alert ("Please submit 3 nouns!")}
+    else {
     const nounInput = nounsFormInputEl.value;
     nounFormValues.push(nounInput);
+    
     console.log(nounFormValues)
-  });
+}});
 }
+// function empty() {
+//     if (nounsFormInputEls === "") {
+//         alert("Please submit 3 nouns");
+//         return false;
+//     };
+
 
 // submitNounsButton.addEventListener("click", function (evt) {
 //     for(let i=0;i<3;i++){
@@ -102,11 +115,14 @@ const formValues = [];
 
 function getInputValues(evt) {
 evt.preventDefault()
-  verbsFormInputEls.forEach((formInputEl) => {
-    const input = formInputEl.value;
+    verbsFormInputEls.forEach((verbsFormInputEl) => {
+        if (verbsFormInputEl.value === ""){
+        return alert ("Please submit 3 verbs!")}
+        else {
+    const input = verbsFormInputEl.value;
     formValues.push(input);
     console.log(formValues)
-  });
+  }});
 }
 // console.log(e.value);
 //     const li4 = document.createElement("li");
