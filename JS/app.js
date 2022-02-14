@@ -19,21 +19,27 @@ const mitzvahMishkebabbleButton = document.querySelector(
 
 const submitAdjective = document.getElementById("adjectives-button");
 
-const submitNounsButton = document.getElementById("nouns-button");
+const nounsForm = document.getElementById("nouns-form");
+const nounsFormInputEls = document.querySelectorAll(".noun-group-input");
+
 const nounInp1 = document.getElementById("ninput-1");
 const nounInp2 = document.getElementById("ninput-2");
 const nounInp3 = document.getElementById("ninput-3");
 
 const verbsForm = document.getElementById("verbs-form");
-const formInputEls = document.querySelectorAll(".form-input");
+const verbsFormInputEls = document.querySelectorAll(".verb-group-input");
 const verbInp1 = document.getElementById("vinput-1");
 const verbInp2 = document.getElementById("vinput-2");
 const verbInp3 = document.getElementById("vinput-3");
 
-const submitAdjectiveButton = document.getElementById("adjectives-button");
-const adjInp1 = document.getElementById("adjinput-1");
-const adjInp2 = document.getElementById("adjinput-2");
-const adjInp3 = document.getElementById("adjinput-3");
+const adjForm = document.getElementById("adj-form");
+const adjFormInputEls = document.querySelectorAll(".adj-group-input");
+
+// const adjInp1 = document.getElementById("adjinput-1");
+// const adjInp2 = document.getElementById("adjinput-2");
+// const adjInp3 = document.getElementById("adjinput-3");
+
+
 
 //input= click --> output --> randomize Mishkabbabler -->into MitzvaSelections []
 /*----------------------------- Event Listeners -----------------------------*/
@@ -53,6 +59,20 @@ button4.addEventListener("click", () => {
 mitzvahMishkebabbleButton.addEventListener("click", () => {
   return getMitzvas();
 });
+
+
+nounsForm.addEventListener("submit", getNounInputValues);
+
+const nounFormValues = [];
+
+function getNounInputValues(evt) {
+evt.preventDefault()
+  nounsFormInputEls.forEach((nounsFormInputEl) => {
+    const nounInput = nounsFormInputEl.value;
+    nounFormValues.push(nounInput);
+    console.log(nounFormValues)
+  });
+}
 
 // submitNounsButton.addEventListener("click", function (evt) {
 //     for(let i=0;i<3;i++){
@@ -75,13 +95,14 @@ mitzvahMishkebabbleButton.addEventListener("click", () => {
 // console.log(nounsArray);
 // });
 
+
 verbsForm.addEventListener("submit", getInputValues);
 
 const formValues = [];
 
 function getInputValues(evt) {
 evt.preventDefault()
-  formInputEls.forEach((formInputEl) => {
+  verbsFormInputEls.forEach((formInputEl) => {
     const input = formInputEl.value;
     formValues.push(input);
     console.log(formValues)
@@ -104,20 +125,34 @@ evt.preventDefault()
 // verbsArray.push(verbInp2.value);
 // verbsArray.push(verbInp3.value);
 
-submitAdjectiveButton.addEventListener("click", function (evt) {
-  const li7 = document.createElement("li");
-  li7.textContent = adjInp1.value;
-  document.getElementById("adj-ul").appendChild(li7);
 
-  const li8 = document.createElement("li");
-  li8.textContent = adjInp2.value;
-  document.getElementById("adj-ul").appendChild(li8);
 
-  const li9 = document.createElement("li");
-  li9.textContent = adjInp3.value;
-  document.getElementById("adj-ul").appendChild(li9);
+adjForm.addEventListener("submit", getAdjInputValues);
 
-  adjArray.push(adjInp1.value);
-  adjArray.push(adjInp2.value);
-  adjArray.push(adjInp3.value);
-});
+const adjFormValues = [];
+
+function getAdjInputValues(evt) {
+evt.preventDefault()
+  adjFormInputEls.forEach((adjFormInputEl) => {
+    const adjInput = adjFormInputEl.value;
+    adjFormValues.push(adjInput);
+    console.log(adjFormValues)
+  });
+}
+// submitAdjectiveButton.addEventListener("click", function (evt) {
+//   const li7 = document.createElement("li");
+//   li7.textContent = adjInp1.value;
+//   document.getElementById("adj-ul").appendChild(li7);
+
+//   const li8 = document.createElement("li");
+//   li8.textContent = adjInp2.value;
+//   document.getElementById("adj-ul").appendChild(li8);
+
+//   const li9 = document.createElement("li");
+//   li9.textContent = adjInp3.value;
+//   document.getElementById("adj-ul").appendChild(li9);
+
+//   adjArray.push(adjInp1.value);
+//   adjArray.push(adjInp2.value);
+//   adjArray.push(adjInp3.value);
+// });
