@@ -22,6 +22,7 @@ const readStoryButton = document.querySelector("#readstory")
 const nounsForm = document.getElementById("nouns-form");
 const nounsContainer= document.getElementById("main-nouns-input")
 const nounsFormInputEls = document.querySelectorAll(".noun-group-input");
+const nounsButton = document.getElementById("nouns-button")
 
 
 const verbsForm = document.getElementById("verbs-form");
@@ -112,7 +113,15 @@ function hideMitzvaButton(){
 function toggleReadButton (){
 readStoryButton.toggleAttribute("hidden")
 }
- 
+
+function toggleNounSubmit (){
+  readStoryButton.toggleAttribute("hidden")
+}
+
+function empty() {
+        alert("Please complete all fields");
+      return false;
+  };
 
 //fill out noun form and put into noun array
 nounsForm.addEventListener("submit", getNounInputValues);
@@ -121,8 +130,8 @@ function getNounInputValues(evt) {
 evt.preventDefault()
 nounsFormInputEls.forEach((nounsFormInputEl) => {
     if (nounsFormInputEl.value === ""){
-    return alert ("Please submit 3 nouns!")}
-    else {
+        empty()}
+      else {
     const nounInput = nounsFormInputEl.value;
     nounFormValues.push(nounInput);
     
@@ -208,7 +217,7 @@ function fillStory() {
    Then you can go with your father to give ${thirdMitzva}  to the needy -  HaShem wants everyone to be happy on Purim!”`
      console.log(story)
    toggleReadButton()
-     return story
+     return alert (story)
 }
 
 
