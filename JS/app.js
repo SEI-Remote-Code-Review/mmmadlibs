@@ -4,7 +4,6 @@ const finalMitzvaArray = getMitzvas();
 let nounsArray = [];
 let verbsArray = [];
 let adjArray = [];
-//getMitzvas returns 3 random Mitzvos from the Mitzva list
 
 /*-------------------------------- Cached Element references --------------------------------*/
 
@@ -17,32 +16,29 @@ const mitzvahMishkebabbleButton = document.querySelector(
   "#mitzvahMishkebabbleButton"
 );
 
+const readStoryButton = document.querySelector("#read-story")
+
 
 const nounsForm = document.getElementById("nouns-form");
 const nounsFormInputEls = document.querySelectorAll(".noun-group-input");
 
-// const nounInp1 = document.getElementById("ninput-1");
-// const nounInp2 = document.getElementById("ninput-2");
-// const nounInp3 = document.getElementById("ninput-3");
 
 const verbsForm = document.getElementById("verbs-form");
 const verbsFormInputEls = document.querySelectorAll(".verb-group-input");
-// const verbInp1 = document.getElementById("vinput-1");
-// const verbInp2 = document.getElementById("vinput-2");
-// const verbInp3 = document.getElementById("vinput-3");
+
 
 const adjForm = document.getElementById("adj-form");
 const adjFormInputEls = document.querySelectorAll(".adj-group-input");
 
 const nameForm = document.getElementById ("name-form");
 const nameFormInputEls = document.querySelector(".name-form-input");
-// const adjInp1 = document.getElementById("adjinput-1");
-// const adjInp2 = document.getElementById("adjinput-2");
-// const adjInp3 = document.getElementById("adjinput-3");
 
+const numberForm = document.getElementById ("number-form");
+const numberFormInputEls = document.querySelector(".number-form-input");
 
+const placeForm = document.getElementById ("place-form");
+const placeFormInputEls = document.querySelector(".place-form-input");
 
-//input= click --> output --> randomize Mishkabbabler -->into MitzvaSelections []
 /*----------------------------- Event Listeners -----------------------------*/
 button1.addEventListener("click", () => {
   console.log("Yechi HaMelech");
@@ -81,38 +77,10 @@ nounsFormInputEls.forEach((nounsFormInputEl) => {
     console.log(nounFormValues)
 }});
 }
-// function empty() {
-//     if (nounsFormInputEls === "") {
-//         alert("Please submit 3 nouns");
-//         return false;
-//     };
-
-
-// submitNounsButton.addEventListener("click", function (evt) {
-//     for(let i=0;i<3;i++){
-//     const li.i = document.createElement("li");
-//     li.i.textContent = nounInp1.value;
-//     document.querySelector("ul").appendChild(li1);}
-
-// const li2 = document.createElement("li");
-//     li2.textContent = nounInp2.value;
-//     document.querySelector("ul").appendChild(li2);
-
-// const li3 = document.createElement("li");
-//     li3.textContent = nounInp3.value;
-//     document.querySelector("ul").appendChild(li3);
-
-// nounsArray.push(nounInp1.value);
-// nounsArray.push(nounInp2.value);
-// nounsArray.push(nounInp3.value);
-
-// console.log(nounsArray);
-// });
-
 
 verbsForm.addEventListener("submit", getInputValues);
 
-const formValues = [];
+const verbFormValues = [];
 
 function getInputValues(evt) {
 evt.preventDefault()
@@ -121,26 +89,10 @@ evt.preventDefault()
         return alert ("Please submit 3 verbs!")}
         else {
     const input = verbsFormInputEl.value;
-    formValues.push(input);
-    console.log(formValues)
+    verbFormValues.push(input);
+    console.log(verbFormValues)
   }});
 }
-// console.log(e.value);
-//     const li4 = document.createElement("li");
-//         li4.textContent = verbInp1.value;
-//         document.getElementById("verbs-ul").appendChild(li4);
-
-//     const li5 = document.createElement("li");
-//         li5.textContent = verbInp2.value;
-//         document.getElementById("verbs-ul").appendChild(li5);
-
-//     const li6 = document.createElement("li");
-//         li6.textContent = verbInp3.value;
-//         document.getElementById("verbs-ul").appendChild(li6);
-
-// verbsArray.push(verbInp1.value);
-// verbsArray.push(verbInp2.value);
-// verbsArray.push(verbInp3.value);
 
 
 
@@ -172,22 +124,45 @@ function getNameInputValues(evt) {
         console.log(nameFormValues)
     }
 };
+readStoryButton.addEventListener("click", fillStory);
 
-    
-// submitAdjectiveButton.addEventListener("click", function (evt) {
-//   const li7 = document.createElement("li");
-//   li7.textContent = adjInp1.value;
-//   document.getElementById("adj-ul").appendChild(li7);
+function fillStory() {
+  let firstNoun = nounFormValues[Math.floor(Math.random() * nounFormValues.length)]
+  let secondNoun = nounFormValues[Math.floor(Math.random() * nounFormValues.length)]
+  let thirdNoun = nounFormValues[Math.floor(Math.random() * nounFormValues.length)]
+  let firstVerb = verbFormValues[Math.floor(Math.random() * verbFormValues.length)]
+  let secondVerb = verbFormValues[Math.floor(Math.random() * verbFormValues.length)]
+  let thirdVerb = verbFormValues[Math.floor(Math.random() * verbFormValues.length)]
+  let firstAdj = adjFormValues[Math.floor(Math.random() * adjFormValues.length)]
+  let secondAdj = adjFormValues[Math.floor(Math.random() * adjFormValues.length)]
+  let thirdAdj = adjFormValues[Math.floor(Math.random() * adjFormValues.length)]
+  let firstMitzva = finalMitzvaArray[0]
+  let secondMitzva = finalMitzvaArray[1]
+  let thirdMitzva = finalMitzvaArray[2]
+  let boysName = nameFormValues
+  
+  
+  let story= `Purim was always fun for ${boysName}. He loved going to Shul to hear the ${firstMitzva} read and see all his ${firstNoun} from school. 
+  He especially loved ${firstVerb} in a costume and seeing all of his friends' different costumes. 
+  This year, however, he was very sad because there was a ${secondNoun} called Carona which made people ${secondVerb} their own ${thirdNoun}.
+   It was really ${firstAdj} for ${boysName}
+   Nevertheless, ${boysName} knew that simcha poretz geder (“joy breaks boundaries”) so he decided to be happy. 
+   Right when he decided to be happy, he started to ${thirdVerb}  which was very ${secondAdj} to everyone watching. 
+   His mother told him, ${boysName} you must eat these ${thirdAdj} ${secondMitzva} I baked for you! They are in the shape of Haman/’s hat! 
+   Then you can go with your father to give ${thirdMitzva}  to the needy -  HaShem wants everyone to be happy on Purim!”`
+  // for (let i = 0; i < 3; i++) {
+  //   storyArray.push(n[Math.floor(Math.random() * nounFormValues.length)])
+  // }
+  //  storyArray.replace("userNoun",storyArray)
+   console.log(story)
+   return story
+}
 
-//   const li8 = document.createElement("li");
-//   li8.textContent = adjInp2.value;
-//   document.getElementById("adj-ul").appendChild(li8);
 
-//   const li9 = document.createElement("li");
-//   li9.textContent = adjInp3.value;
-//   document.getElementById("adj-ul").appendChild(li9);
 
-//   adjArray.push(adjInp1.value);
-//   adjArray.push(adjInp2.value);
-//   adjArray.push(adjInp3.value);
-// });
+
+//submitbutton.addeventlistener("submit,"function(){
+// (createStory)
+//result.innerHtml= storyString
+
+  
