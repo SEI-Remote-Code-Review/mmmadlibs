@@ -29,7 +29,7 @@ function getMitzvas() {
   for (let i = 0; i < 3; i++) {
     finalMitzvaArray.push(mitzvahList[Math.floor(Math.random() * mitzvahList.length)])
   }
-  return finalMitzvaArray
+    return finalMitzvaArray
 }
 
 

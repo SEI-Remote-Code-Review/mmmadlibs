@@ -61,7 +61,9 @@ button4.addEventListener("click", () => {
 });
 
 mitzvahMishkebabbleButton.addEventListener("click", () => {
-  return getMitzvas();
+     getMitzvas();
+     hideMitzvaButton()
+     toggleReadButton()
 });
 
 //once story is chosen, produce first form
@@ -104,18 +106,12 @@ function hidePlaceForm(){
   placeContainer.style.display="none"
 }
 
-function displayMitzvaButton(){
-  mitzvahMishkebabbleButton.style.display="flex"
+function hideMitzvaButton(){
+  mitzvahMishkebabbleButton.toggleAttribute("hidden")
 }
-function hideMitzvaButton (){
-  mitzvahMishkebabbleButton.style.display = "none"
+function toggleReadButton (){
+readStoryButton.toggleAttribute("hidden")
 }
-function displayReadButton (){
- readStoryButton.style.display = "flex" 
-}
-function hideReadButton (){
-  readStoryButton.style.display = "none" 
- }
  
 
 //fill out noun form and put into noun array
@@ -179,7 +175,7 @@ function getNameInputValues(evt) {
         const nameInput = nameFormInputEls.value;
         nameFormValues.push(nameInput);
         hideNameForm()
-        displayMitzvaButton()
+        hideMitzvaButton()
         console.log(nameFormValues)
     }
 };
@@ -211,7 +207,8 @@ function fillStory() {
    His mother told him, ${boysName} you must eat these ${thirdAdj} ${secondMitzva} I baked for you! They are in the shape of Haman/’s hat! 
    Then you can go with your father to give ${thirdMitzva}  to the needy -  HaShem wants everyone to be happy on Purim!”`
      console.log(story)
-   return story
+   toggleReadButton()
+     return story
 }
 
 
