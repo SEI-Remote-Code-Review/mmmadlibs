@@ -20,6 +20,7 @@ const readStoryButton = document.querySelector("#read-story")
 
 
 const nounsForm = document.getElementById("nouns-form");
+const nounsContainer= document.getElementById("main-nouns-input")
 const nounsFormInputEls = document.querySelectorAll(".noun-group-input");
 
 
@@ -40,9 +41,9 @@ const placeForm = document.getElementById ("place-form");
 const placeFormInputEls = document.querySelector(".place-form-input");
 
 /*----------------------------- Event Listeners -----------------------------*/
-button1.addEventListener("click", () => {
-  console.log("Yechi HaMelech");
-});
+button1.addEventListener("click", displayNounForm)
+  
+
 button2.addEventListener("click", () => {
   console.log("Yechi HaMelech");
 });
@@ -57,16 +58,28 @@ mitzvahMishkebabbleButton.addEventListener("click", () => {
   return getMitzvas();
 });
 
+//once story is chosen, produce first form
+//functions for each form
+function displayNounForm(){
+  // console.log(nounsContainer)
+  nounsContainer.style.display="flex"
+}
+function displayNounForm(){
+  // console.log(nounsContainer)
+  nounsContainer.style.display="none"
+}
+function displayVerbForm(){
+  console.log("verb form will be displayed")
+}
+function displayAdjForm(){}
+function displayNameForm(){}
+function displayPlaceForm(){}
 
+//fill out noun form and put into noun array
 nounsForm.addEventListener("submit", getNounInputValues);
-
 const nounFormValues = [];
-
-
-
 function getNounInputValues(evt) {
 evt.preventDefault()
-
 nounsFormInputEls.forEach((nounsFormInputEl) => {
     if (nounsFormInputEl.value === ""){
     return alert ("Please submit 3 nouns!")}
@@ -74,7 +87,9 @@ nounsFormInputEls.forEach((nounsFormInputEl) => {
     const nounInput = nounsFormInputEl.value;
     nounFormValues.push(nounInput);
     
+    displayVerbForm()
     console.log(nounFormValues)
+    
 }});
 }
 
