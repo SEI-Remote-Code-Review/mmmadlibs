@@ -76,14 +76,47 @@ function hideNounForm(){
 }
 //verbs display
 function displayVerbForm(){
-  console.log("verb form will be displayed")
+  verbsContainer.style.display="flex"
 }
 function hideVerbsForm(){
   verbsContainer.style.display="none"
 }
-function displayAdjForm(){}
-function displayNameForm(){}
-function displayPlaceForm(){}
+//adj display
+function displayAdjForm(){
+  adjContainer.style.display="flex"
+}
+function hideAdjForm(){
+  adjContainer.style.display="none"
+}
+
+//name display
+function displayNameForm(){
+  nameContainer.style.display="flex"
+}
+function hideNameForm(){
+  nameContainer.style.display="none"
+}
+//place display
+function displayPlaceForm(){
+  placeContainer.style.display="flex"
+}
+function hidePlaceForm(){
+  placeContainer.style.display="none"
+}
+
+function displayMitzvaButton(){
+  mitzvahMishkebabbleButton.style.display="flex"
+}
+function hideMitzvaButton (){
+  mitzvahMishkebabbleButton.style.display = "none"
+}
+function displayReadButton (){
+ readStoryButton.style.display = "flex" 
+}
+function hideReadButton (){
+  readStoryButton.style.display = "none" 
+ }
+ 
 
 //fill out noun form and put into noun array
 nounsForm.addEventListener("submit", getNounInputValues);
@@ -97,16 +130,15 @@ nounsFormInputEls.forEach((nounsFormInputEl) => {
     const nounInput = nounsFormInputEl.value;
     nounFormValues.push(nounInput);
     
+    hideNounForm()
     displayVerbForm()
     console.log(nounFormValues)
     
 }});
 }
-
+//fill out verb form
 verbsForm.addEventListener("submit", getInputValues);
-
 const verbFormValues = [];
-
 function getInputValues(evt) {
 evt.preventDefault()
     verbsFormInputEls.forEach((verbsFormInputEl) => {
@@ -115,16 +147,15 @@ evt.preventDefault()
         else {
     const input = verbsFormInputEl.value;
     verbFormValues.push(input);
+    hideVerbsForm()
+    displayAdjForm()
     console.log(verbFormValues)
   }});
 }
 
-
-
+//fill out adj form
 adjForm.addEventListener("submit", getAdjInputValues);
-
 const adjFormValues = [];
-
 function getAdjInputValues(evt) {
 evt.preventDefault()
 adjFormInputEls.forEach((adjFormInputEl) => {
@@ -132,13 +163,14 @@ adjFormInputEls.forEach((adjFormInputEl) => {
     return alert ("Please submit 3 adjectives!")}
     else {const adjInput = adjFormInputEl.value;
     adjFormValues.push(adjInput);
+    hideAdjForm()
+    displayNameForm()
     console.log(adjFormValues)
 }});
 }
-
+//fill out name form
 nameForm.addEventListener("submit", getNameInputValues);
 const nameFormValues = []
-
 function getNameInputValues(evt) {
     evt.preventDefault()
          if (nameFormInputEls.value === ""){
@@ -146,6 +178,8 @@ function getNameInputValues(evt) {
         else {
         const nameInput = nameFormInputEls.value;
         nameFormValues.push(nameInput);
+        hideNameForm()
+        displayMitzvaButton()
         console.log(nameFormValues)
     }
 };
