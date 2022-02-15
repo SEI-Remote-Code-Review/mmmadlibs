@@ -16,7 +16,7 @@ const mitzvahMishkebabbleButton = document.querySelector(
   "#mitzvahMishkebabbleButton"
 );
 
-const readStoryButton = document.querySelector("#read-story")
+const readStoryButton = document.querySelector("#readstory")
 
 
 const nounsForm = document.getElementById("nouns-form");
@@ -26,19 +26,25 @@ const nounsFormInputEls = document.querySelectorAll(".noun-group-input");
 
 const verbsForm = document.getElementById("verbs-form");
 const verbsFormInputEls = document.querySelectorAll(".verb-group-input");
-
+const verbsContainer = document.getElementById("main-verbs-input")
 
 const adjForm = document.getElementById("adj-form");
 const adjFormInputEls = document.querySelectorAll(".adj-group-input");
+const adjContainer = document.getElementById("main-adjectives-input")
 
 const nameForm = document.getElementById ("name-form");
 const nameFormInputEls = document.querySelector(".name-form-input");
+const nameContainer = document.getElementById("main-name-input")
+
 
 const numberForm = document.getElementById ("number-form");
 const numberFormInputEls = document.querySelector(".number-form-input");
+const numberContainer = document.getElementById("main-number-input")
+
 
 const placeForm = document.getElementById ("place-form");
 const placeFormInputEls = document.querySelector(".place-form-input");
+const placeContainer = document.getElementById("main-place-input")
 
 /*----------------------------- Event Listeners -----------------------------*/
 button1.addEventListener("click", displayNounForm)
@@ -60,16 +66,20 @@ mitzvahMishkebabbleButton.addEventListener("click", () => {
 
 //once story is chosen, produce first form
 //functions for each form
+//nouns display
 function displayNounForm(){
   // console.log(nounsContainer)
   nounsContainer.style.display="flex"
 }
-function displayNounForm(){
-  // console.log(nounsContainer)
+function hideNounForm(){
   nounsContainer.style.display="none"
 }
+//verbs display
 function displayVerbForm(){
   console.log("verb form will be displayed")
+}
+function hideVerbsForm(){
+  verbsContainer.style.display="none"
 }
 function displayAdjForm(){}
 function displayNameForm(){}
@@ -139,6 +149,7 @@ function getNameInputValues(evt) {
         console.log(nameFormValues)
     }
 };
+
 readStoryButton.addEventListener("click", fillStory);
 
 function fillStory() {
@@ -165,19 +176,12 @@ function fillStory() {
    Right when he decided to be happy, he started to ${thirdVerb}  which was very ${secondAdj} to everyone watching. 
    His mother told him, ${boysName} you must eat these ${thirdAdj} ${secondMitzva} I baked for you! They are in the shape of Haman/’s hat! 
    Then you can go with your father to give ${thirdMitzva}  to the needy -  HaShem wants everyone to be happy on Purim!”`
-  // for (let i = 0; i < 3; i++) {
-  //   storyArray.push(n[Math.floor(Math.random() * nounFormValues.length)])
-  // }
-  //  storyArray.replace("userNoun",storyArray)
-   console.log(story)
+     console.log(story)
    return story
 }
 
 
 
 
-//submitbutton.addeventlistener("submit,"function(){
-// (createStory)
-//result.innerHtml= storyString
 
   

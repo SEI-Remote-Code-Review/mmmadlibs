@@ -4,3 +4,26 @@
 #main-nouns-input {
     display:none;
 }
+
+#main-verbs-input{
+    display:none;
+} 
+ #main-adjectives-input{
+    display:none;
+} 
+ #main-name-input{
+    display:none;
+}
+ #main-place-input{
+    display:none;
+}
+ #main-number-input{
+    display:none;
+}
+
+ #mitzvahMishkebabbleButton{
+    display:none;
+} 
+#readstory{
+    display: none;
+}
