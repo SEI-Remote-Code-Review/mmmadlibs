@@ -37,12 +37,10 @@ const nameContainer = document.getElementById("main-name-input")
 const cardsContainer = document.getElementById("cards")
 
 /*----------------------------- Event Listeners -----------------------------*/
-button1.addEventListener("click", fillStory)
+button1.addEventListener("click", fillStory1)
   
 
-button2.addEventListener("click", () => {
-  console.log("Yechi HaMelech");
-});
+button2.addEventListener("click", fillStory2)
 button3.addEventListener("click", () => {
   console.log("Yechi HaMelech");
 });
@@ -181,9 +179,9 @@ function getNameInputValues(evt) {
     }
 };
 
-button1.addEventListener("click", fillStory);
+button1.addEventListener("click", fillStory1);
 
-function fillStory() {
+function fillStory1() {
   let firstNoun = nounFormValues[Math.floor(Math.random() * nounFormValues.length)]
   let secondNoun = nounFormValues[Math.floor(Math.random() * nounFormValues.length)]
   let thirdNoun = nounFormValues[Math.floor(Math.random() * nounFormValues.length)]
@@ -199,7 +197,7 @@ function fillStory() {
   let boysName = nameFormValues
   
   
-  let story= `Purim was always fun for ${boysName}. He loved going to Shul to hear the ${firstMitzva} read and see all his ${firstNoun} from school. 
+  let story1= `Purim was always fun for ${boysName}. He loved going to Shul to hear the ${firstMitzva} read and see all his ${firstNoun} from school. 
   He especially loved ${firstVerb} in a costume and seeing all of his friends' different costumes. 
   This year, however, he was very sad because there was a ${secondNoun} called Carona which made people ${secondVerb} their own ${thirdNoun}.
    It was really ${firstAdj} for ${boysName}
@@ -207,14 +205,38 @@ function fillStory() {
    Right when he decided to be happy, he started to ${thirdVerb}  which was very ${secondAdj} to everyone watching. 
    His mother told him, ${boysName} you must eat these ${thirdAdj} ${secondMitzva} I baked for you! They are in the shape of Haman/’s hat! 
    Then you can go with your father to give ${thirdMitzva}  to the needy -  HaShem wants everyone to be happy on Purim!”`
-     console.log(story)
-     return alert (story)
+     console.log(story1)
+     return alert (story1)
 }
 
-
-
-
-
-
-
+function fillStory2 (){
+  let firstNoun = nounFormValues[Math.floor(Math.random() * nounFormValues.length)]
+  let secondNoun = nounFormValues[Math.floor(Math.random() * nounFormValues.length)]
+  let thirdNoun = nounFormValues[Math.floor(Math.random() * nounFormValues.length)]
+  let firstVerb = verbFormValues[Math.floor(Math.random() * verbFormValues.length)]
+  let secondVerb = verbFormValues[Math.floor(Math.random() * verbFormValues.length)]
+  let thirdVerb = verbFormValues[Math.floor(Math.random() * verbFormValues.length)]
+  let firstAdj = adjFormValues[Math.floor(Math.random() * adjFormValues.length)]
+  let secondAdj = adjFormValues[Math.floor(Math.random() * adjFormValues.length)]
+  let thirdAdj = adjFormValues[Math.floor(Math.random() * adjFormValues.length)]
+  let firstMitzva = finalMitzvaArray[0]
+  let secondMitzva = finalMitzvaArray[1]
+  let thirdMitzva = finalMitzvaArray[2]
+  let boysName = nameFormValues
   
+let story2 = 
+`Rosh HaShana
+${boysName} lived in Costa Rica . 
+His family had lived there for many years. 
+Her favorite holiday was Rosh HaShana because he was excited for a sweet new year. 
+But this Rosh HaShana, he would have to really ${firstVerb} because his ${firstNoun} was so ${firstAdj}. 
+
+On top of that, ${boysName} really wanted to ${secondVerb} but his sister’s ${secondNoun} was always in the way!
+ It was really ${secondAdj} for her. 
+
+Even with these challenges, ${boysName} was still looking forward to dipping the ${firstMitzva} in the ${thirdMitzva} 
+for a sweet new year.
+
+She also really wanted to hear the Rabbi blow the ${thirdMitzva} in shul. Hearing it always made her want to ${thirdVerb} in the ${thirdNoun}!`
+return alert (story2)
+}
