@@ -41,12 +41,8 @@ button1.addEventListener("click", fillStory1)
   
 
 button2.addEventListener("click", fillStory2)
-button3.addEventListener("click", () => {
-  console.log("Yechi HaMelech");
-});
-button4.addEventListener("click", () => {
-  console.log("Yechi HaMelech");
-});
+button3.addEventListener("click", (fillStory3))
+button4.addEventListener("click", (fillstory4))
 
 mitzvahMishkebabbleButton.addEventListener("click", () => {
     getMitzvas();
@@ -106,6 +102,10 @@ function toggleNounSubmit (){
 function displayCards(){
   cardsContainer.style.display=('flex')
 }
+
+function hideCards (){
+    cardsContainer.style.display=('none')
+  }
 
 function empty() {
   alert("Please complete all fields");
@@ -200,13 +200,14 @@ function fillStory1() {
   let story1= `Purim was always fun for ${boysName}. He loved going to Shul to hear the ${firstMitzva} read and see all his ${firstNoun} from school. 
   He especially loved ${firstVerb} in a costume and seeing all of his friends' different costumes. 
   This year, however, he was very sad because there was a ${secondNoun} called Carona which made people ${secondVerb} their own ${thirdNoun}.
-   It was really ${firstAdj} for ${boysName}
-   Nevertheless, ${boysName} knew that simcha poretz geder (“joy breaks boundaries”) so he decided to be happy. 
-   Right when he decided to be happy, he started to ${thirdVerb}  which was very ${secondAdj} to everyone watching. 
-   His mother told him, ${boysName} you must eat these ${thirdAdj} ${secondMitzva} I baked for you! They are in the shape of Haman/’s hat! 
-   Then you can go with your father to give ${thirdMitzva}  to the needy -  HaShem wants everyone to be happy on Purim!”`
-     console.log(story1)
-     return alert (story1)
+  It was really ${firstAdj} for ${boysName}
+      Nevertheless, ${boysName} knew that simcha poretz geder (“joy breaks boundaries”) so he decided to be happy. 
+  Right when he decided to be happy, he started to ${thirdVerb}  which was very ${secondAdj} to everyone watching. 
+  His mother told him, ${boysName} you must eat these ${thirdAdj} ${secondMitzva} I baked for you! They are in the shape of Haman/’s hat! 
+  Then you can go with your father to give ${thirdMitzva}  to the needy -  HaShem wants everyone to be happy on Purim!”`
+    console.log(story1)
+      alert (story1)
+      hideCards()
 }
 
 function fillStory2 (){
@@ -238,5 +239,59 @@ Even with these challenges, ${boysName} was still looking forward to dipping the
 for a sweet new year.
 
 She also really wanted to hear the Rabbi blow the ${thirdMitzva} in shul. Hearing it always made her want to ${thirdVerb} in the ${thirdNoun}!`
-return alert (story2)
+alert (story2)
+hideCards()
 }
+
+
+function fillStory3 (){
+  let firstNoun = nounFormValues[Math.floor(Math.random() * nounFormValues.length)]
+  let secondNoun = nounFormValues[Math.floor(Math.random() * nounFormValues.length)]
+  let thirdNoun = nounFormValues[Math.floor(Math.random() * nounFormValues.length)]
+  let firstVerb = verbFormValues[Math.floor(Math.random() * verbFormValues.length)]
+  let secondVerb = verbFormValues[Math.floor(Math.random() * verbFormValues.length)]
+  let thirdVerb = verbFormValues[Math.floor(Math.random() * verbFormValues.length)]
+  let firstAdj = adjFormValues[Math.floor(Math.random() * adjFormValues.length)]
+  let secondAdj = adjFormValues[Math.floor(Math.random() * adjFormValues.length)]
+  let thirdAdj = adjFormValues[Math.floor(Math.random() * adjFormValues.length)]
+  let firstMitzva = finalMitzvaArray[0]
+  let secondMitzva = finalMitzvaArray[1]
+  let thirdMitzva = finalMitzvaArray[2]
+  let boysName = nameFormValues
+let story3 = 
+`For ${boysName}, Chanuka was always his favirote holiday. He got to eat the delicious jelly-filled ${firstMitzva} and light the beautiful silver ${secondMitzva} which had been in his father's family for hundreds of years.
+His favirote thing to do on Chanuka, though, was to spin the ${thirdMitzva}. Would it fall on Nun, Gimmel, Hey or Shin? 
+He also loved to ${firstVerb} ${firstAdj} ${firstNoun}s from the shop down the street. He always ${secondVerb} with his ${secondAdj} ${secondNoun}.
+Chanuka truly was ${boysName}'s favirote holiday. The hardest part is ${thirdVerb} for next ${thirdNoun}. But he knew things would be very ${thirdAdj} by then, B"H.
+`
+alert(story3)
+hideCards()
+}
+
+function fillstory4 (){
+  let firstNoun = nounFormValues[Math.floor(Math.random() * nounFormValues.length)]
+  let secondNoun = nounFormValues[Math.floor(Math.random() * nounFormValues.length)]
+  let thirdNoun = nounFormValues[Math.floor(Math.random() * nounFormValues.length)]
+  let firstVerb = verbFormValues[Math.floor(Math.random() * verbFormValues.length)]
+  let secondVerb = verbFormValues[Math.floor(Math.random() * verbFormValues.length)]
+  let thirdVerb = verbFormValues[Math.floor(Math.random() * verbFormValues.length)]
+  let firstAdj = adjFormValues[Math.floor(Math.random() * adjFormValues.length)]
+  let secondAdj = adjFormValues[Math.floor(Math.random() * adjFormValues.length)]
+  let thirdAdj = adjFormValues[Math.floor(Math.random() * adjFormValues.length)]
+  let firstMitzva = finalMitzvaArray[0]
+  let secondMitzva = finalMitzvaArray[1]
+  let thirdMitzva = finalMitzvaArray[2]
+  let boysName = nameFormValues
+  
+  let story4 =
+
+  `Pesach was always so fun for ${boysName}. He got to ${firstVerb} with his family who came in from all over the ${firstNoun}.
+  This year, his mother asked him to help her clean the house to make sure there was absolutely no ${firstMitzva} to be found. 
+  His father also said that ${boysName} could come help him ${secondVerb} ${secondMitzva} at the local ${secondNoun}. At the ${secondMitzva}, 
+  all the people there would scream out "l'shem ${secondMitzva} Mitzva!" before they would ${secondVerb}.
+  ${boysName} was also very excited to have the Seder and ${thirdVerb} the four cups of ${thirdMitzva} from his ${thirdAdj} ${thirdNoun}. Next year in Jerusalem!
+  `
+  alert(story4)
+  hideCards()
+}
+
