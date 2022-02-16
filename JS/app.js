@@ -1,9 +1,6 @@
 import { getMitzvas } from "./MitzvahList.js";
 /*-------------------------------- Variables --------------------------------*/
 const finalMitzvaArray = getMitzvas();
-let nounsArray = [];
-let verbsArray = [];
-let adjArray = [];
 
 /*-------------------------------- Cached Element references --------------------------------*/
 
@@ -37,18 +34,10 @@ const nameForm = document.getElementById ("name-form");
 const nameFormInputEls = document.querySelector(".name-form-input");
 const nameContainer = document.getElementById("main-name-input")
 
-
-const numberForm = document.getElementById ("number-form");
-const numberFormInputEls = document.querySelector(".number-form-input");
-const numberContainer = document.getElementById("main-number-input")
-
-
-const placeForm = document.getElementById ("place-form");
-const placeFormInputEls = document.querySelector(".place-form-input");
-const placeContainer = document.getElementById("main-place-input")
+const cardsContainer = document.getElementById("cards")
 
 /*----------------------------- Event Listeners -----------------------------*/
-button1.addEventListener("click", displayNounForm)
+button1.addEventListener("click", fillStory)
   
 
 button2.addEventListener("click", () => {
@@ -63,11 +52,12 @@ button4.addEventListener("click", () => {
 
 mitzvahMishkebabbleButton.addEventListener("click", () => {
      getMitzvas();
-     hideMitzvaButton()
+     toggleMitzvaButton()
      toggleReadButton()
 });
 
 //once story is chosen, produce first form
+
 //functions for each form
 //nouns display
 function displayNounForm(){
@@ -92,36 +82,35 @@ function hideAdjForm(){
   adjContainer.style.display="none"
 }
 
-//name display
 function displayNameForm(){
-  nameContainer.style.display="flex"
-}
-function hideNameForm(){
-  nameContainer.style.display="none"
-}
-//place display
-function displayPlaceForm(){
-  placeContainer.style.display="flex"
-}
-function hidePlaceForm(){
-  placeContainer.style.display="none"
+  nameContainer.style.display=("flex")
 }
 
-function hideMitzvaButton(){
+function hideNameForm(){
+  nameContainer.style.display=("none")
+}
+
+
+function toggleMitzvaButton(){
   mitzvahMishkebabbleButton.toggleAttribute("hidden")
 }
 function toggleReadButton (){
-readStoryButton.toggleAttribute("hidden")
+  readStoryButton.toggleAttribute("hidden")
 }
 
 function toggleNounSubmit (){
   readStoryButton.toggleAttribute("hidden")
 }
 
+//cards display
+function displayCards(){
+  cardsContainer.style.display=('flex')
+}
+
 function empty() {
-        alert("Please complete all fields");
-      return false;
-  };
+  alert("Please complete all fields");
+  return false;
+};
 
 //fill out noun form and put into noun array
 nounsForm.addEventListener("submit", getNounInputValues);
@@ -184,7 +173,7 @@ function getNameInputValues(evt) {
         const nameInput = nameFormInputEls.value;
         nameFormValues.push(nameInput);
         hideNameForm()
-        hideMitzvaButton()
+        toggleMitzvaButton()
         console.log(nameFormValues)
     }
 };
