@@ -207,7 +207,7 @@ function fillStory1() {
   Then you can go with your father to give ${thirdMitzva}  to the needy -  HaShem wants everyone to be happy on Purim!”`
     console.log(story1)
       alert (story1)
-      hideCards()
+      hideCards
 }
 
 function fillStory2 (){

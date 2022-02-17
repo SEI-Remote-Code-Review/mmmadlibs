@@ -1,24 +1,41 @@
+body {
+    display: flex;
+    flex-direction: column; 
+    height: 250px;
+    justify-content: center;
+}
+h1{
+    display: flex;
+    justify-content: center;
+}
 #cards {
     display:none;
-
+    justify-content: space-around;
+    align-items: center
 }
-#main-nouns-input {
-    display:flex
+ 
+#main-nouns-input{
+    display:flex;
+    justify-content: center;
 }
-
+    
+#mitzvahMishkebabbleButton{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    height: 499%;
+}
 #main-verbs-input{
     display:none;
-} 
+    justify-content: center;
+
+}
  #main-adjectives-input{
     display:none;
+    justify-content: center;
 } 
  #main-name-input{
     display:none;
+    justify-content: center;
 }
- #main-place-input{
-    display:none;
-}
- #main-number-input{
-    display:none;
-}
-
+ 
