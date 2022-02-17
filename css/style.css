@@ -1,8 +1,9 @@
 body {
     display: flex;
     flex-direction: column; 
-    height: 250px;
     justify-content: center;
+    align-items: center;
+
 }
 h1{
     display: flex;
@@ -10,15 +11,23 @@ h1{
 }
 #cards {
     display:none;
-    justify-content: space-around;
-    align-items: center
 }
- 
+.card {
+justify-content: space-between;}
 #main-nouns-input{
     display:flex;
     justify-content: center;
 }
-    
+
+.card-img-top {
+    max-height:50%
+ 
+}
+.btn-primary{
+    display: flex;
+    justify-content: space-between;
+
+}
 #mitzvahMishkebabbleButton{
     display: flex;
     justify-content: center;
