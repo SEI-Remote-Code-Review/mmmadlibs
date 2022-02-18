@@ -20,7 +20,6 @@ const readStoryButton = document.querySelector("#readstory");
 const nounsForm = document.getElementById("nouns-form");
 const nounsContainer = document.getElementById("main-nouns-input");
 const nounsFormInputEls = document.querySelectorAll(".noun-group-input");
-const nounsButton = document.getElementById("nouns-button");
 
 const verbsForm = document.getElementById("verbs-form");
 const verbsFormInputEls = document.querySelectorAll(".verb-group-input");
@@ -49,9 +48,6 @@ mitzvahMishkebabbleButton.addEventListener("click", () => {
   displayCards();
 });
 
-//once story is chosen, produce first form
-
-//functions for each form
 //nouns display
 function displayNounForm() {
   // console.log(nounsContainer)
@@ -82,29 +78,16 @@ function hideNameForm() {
   nameContainer.style.display = "none";
 }
 
-function displayResetButton() {
-  resetButton.style.display = "flex";
-}
+
 
 function toggleMitzvaButton() {
   mitzvahMishkebabbleButton.toggleAttribute("hidden");
 }
 
-function toggleReadButton() {
-  readStoryButton.toggleAttribute("hidden");
-}
-
-function toggleNounSubmit() {
-  readStoryButton.toggleAttribute("hidden");
-}
 
 //cards display
 function displayCards() {
   cardsContainer.style.display = "flex";
-}
-
-function hideCards() {
-  cardsContainer.style.display = "none";
 }
 
 function empty() {

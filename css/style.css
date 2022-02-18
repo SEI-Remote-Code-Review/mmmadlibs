@@ -3,6 +3,8 @@ body {
     flex-direction: column; 
     justify-content: center;
     align-items: center;
+    background-color: rgb(156, 186, 247);
+    font-family: fantasy;
 
 }
 h1{
