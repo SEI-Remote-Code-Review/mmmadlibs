@@ -1,0 +1,56 @@
+body {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(156, 186, 247);
+    font-family: fantasy;
+
+}
+h1{
+    display: flex;
+    justify-content: center;
+}
+#cards {
+    display:none;
+}
+.card {
+justify-content: space-between;}
+#main-nouns-input{
+    display:flex;
+    justify-content: center;
+}
+
+.card-img-top {
+    max-height:50%
+ 
+}
+.btn-primary{
+    display: flex;
+    justify-content: space-between;
+
+}
+#mitzvahMishkebabbleButton{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    height: 499%;
+}
+#main-verbs-input{
+    display:none;
+    justify-content: center;
+
+}
+ #main-adjectives-input{
+    display:none;
+    justify-content: center;
+} 
+ #main-name-input{
+    display:none;
+    justify-content: center;
+}
+ 
+
+#reset{
+    display: none;
+}
